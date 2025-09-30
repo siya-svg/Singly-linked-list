@@ -13,7 +13,13 @@ struct Node* createNode(int roll) {
     newNode->next = NULL; // <-- Initially, next is NULL (end of list)
     return newNode;
 }
-
+// Insert at beginning
+struct Node* insertAtBeginning(struct Node* head,int data){
+    struct Node* newNode=createNode(data);
+    newNode->next=head;
+    head=newNode;
+    return head;
+}
 // Insert at end
 void insertEnd(struct Node** head, int roll) {
     struct Node* newNode = createNode(roll);
@@ -45,7 +51,7 @@ int main() {
     // Replace with your team’s roll numbers
     insertEnd(&head, 56);   // your roll number
     insertEnd(&head, 12);   // teammate 2
-
+    head=insertAtBeginning(head,0);
     display(head);
     return 0;
 }
