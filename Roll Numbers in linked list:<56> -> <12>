@@ -2,15 +2,15 @@
 #include <stdlib.h>
 
 struct Node {
-    int roll;
-    struct Node* next;
+    int roll; //<-- this stores the roll no
+    struct Node* next; // <--this stores the adress of the next node
 };
 
 // Function to create new node
 struct Node* createNode(int roll) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->roll = roll;
-    newNode->next = NULL;
+    newNode->roll = roll; // <-- Store the roll number inside the node
+    newNode->next = NULL; // <-- Initially, next is NULL (end of list)
     return newNode;
 }
 
